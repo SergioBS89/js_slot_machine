@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <title>Pac desarrollo UF3</title>
+</head>
+<body>
+    <div class="contenedor-imagenes">
+        <img id="img_1" src="img/pingu.png" alt="">
+        <img id="img_2" src="img/pingu.png" alt="">
+        <img id="img_3" src="img/pingu.png" alt="">
+    </div>
+
+    <input type="button" id="lanzar" value="Lanzar">
+    <input type="button" id="introducir" value="Introducir monedas">
+    <section>
+        <label for="">Apuesta</label>
+        <input type="number" onKeyDown="return false"  max="100" min="0" id="apuesta">
+
+        <label for="">Cantidad</label>
+        <input readonly type="text" id="cantidad">
+    </section>
+    <div class="tabla-historial">       
+     <table class="resultadoJuego" id="resultadoJuego" hidden>
+        <thead>
+          <tr>
+            <th>HISTORIAL DE JUEGO</th>
+          </tr>
+        </thead>  
+        <tbody id="tbody"> 
+        <!-- Generado dinamicamente con JS -->
+        </tbody>
+    </table> 
+    </div>
+    <button type="text" id="terminar">Terminar partida</button>
+    
+<script src="JS/tragraperras.js"></script>
+</body>
+</html>
