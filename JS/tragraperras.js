@@ -2,10 +2,11 @@ var listaImagenes = ["aubergine", "banana", "carrots", "cherries", "dollar", "le
 document.getElementById('lanzar').addEventListener('click',girar);
 document.getElementById('cantidad').value=0
 document.getElementById('apuesta').value=0
-document.getElementById('introducir').addEventListener('click',juegoIniciado)
+
 const tabla = document.getElementById('resultadoJuego')
 const insertarColumna = document.getElementById("tbody")
 const terminarPartida=document.getElementById('terminar')
+let palancaArriba=true
 
 // Funcion para bloquear la introduccion de monedas
 function noMasMonedas(){    
@@ -13,11 +14,13 @@ function noMasMonedas(){
     apuesta.disabled =true
     apuesta.value=0
     }
+  
+
 
     // Funcion para iniciar la partida
  var iniciado = true
 function juegoIniciado(){   
-    if(iniciado ==true){
+    if(iniciado ==true && document.getElementById('apuesta').value>0){
         var dinero= parseInt( document.getElementById('apuesta').value) 
         document.getElementById('cantidad').value=dinero
         noMasMonedas()
@@ -32,7 +35,13 @@ function juegoIniciado(){
         iniciado=false
         noInsertarMasMonedas=false;
     }
+    else{
+      alert('No hay dinero que insertar')
+    }
 }
+
+document.getElementById('introducir').addEventListener('click',juegoIniciado,)
+
 function terminar(){
   tabla.hidden=true
   insertarColumna.innerHTML = '';
@@ -46,6 +55,14 @@ function reiniciarCantidad(){
   document.getElementById('cantidad').value=0
 }
 
+function bajarPalanca(){
+ document.getElementById('lanzar').src='../img/palancaDOWN.png'
+}
+function subirPalanca(){
+  
+  document.getElementById('lanzar').src='../img/palancaUP.png'
+}
+
  // Si el usuario desea terminar la partida
 
  terminarPartida.addEventListener('click', ()=>{
@@ -56,27 +73,31 @@ function reiniciarCantidad(){
   if( total > 0){
     reiniciarCantidad() //reinicio el valor de la cantidad a 0
   }
-  noInsertarMasMonedas = true
   iniciado = true
-  console.log(premioFinal)  
+  document.getElementById('cont-finalizar').innerHTML +=`Has conseguido un total de ${premioFinal} monedas`
 })
 
+// Cuando el usuario quiere lanzar la palanca sube 
+
+
+
 function girar (){
-    
+
+    subirPalanca(palancaArriba)
     var saldo =parseInt( document.getElementById('cantidad').value)
     var lanzamiento =1
     var premio=0
-    
 
     if(saldo>=lanzamiento){
-    document.getElementById('cantidad').value = saldo - 1;
 
-    // Agregamos al historial el gasto de una moneda
-    insertarColumna.innerHTML += `
-    <tr>
-          <td>Has gastado una moneda.</td>
-    </tr>
-    `;
+      if(palancaArriba==true){
+
+    document.getElementById('cantidad').value = saldo - 1;
+    bajarPalanca()
+    palancaArriba=false
+    
+
+  
 
     listaImagenes = ["aubergine", "banana", "carrots", "cherries", "dollar", "lemon", "orange", "peach", "potato", "tomato"];
     var n1 = Math.floor(Math.random() * 10);
@@ -164,9 +185,21 @@ const dolar =arrayImgRepetidas['dollar'] || 0;
         </tr>
         `;       
         document.getElementById('cantidad').value=saldo + premio
+      }else{
+          // Agregamos al historial el gasto de una moneda
+    insertarColumna.innerHTML += `
+    <tr>
+          <td>Has gastado una moneda.</td>
+    </tr>
+    `;
+      }}else{
+        subirPalanca()
+        palancaArriba=true
       }
 
 }else{
     alert('inserta mas dinero')
 }
 }
+
+// CREAR ANIMACION PARA LA PALANCA 

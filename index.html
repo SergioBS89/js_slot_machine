@@ -7,21 +7,20 @@
     <title>Pac desarrollo UF3</title>
 </head>
 <body>
-    <div class="contenedor-imagenes">
-        <img id="img_1" src="img/pingu.png" alt="">
-        <img id="img_2" src="img/pingu.png" alt="">
-        <img id="img_3" src="img/pingu.png" alt="">
-    </div>
+    <div class="machine">
+        <img class="imagenes_slots img1" id="img_1" src="img/pingu.png" alt="">
+        <img class="imagenes_slots img2" id="img_2" src="img/pingu.png" alt="">
+        <img class="imagenes_slots img3" id="img_3" src="img/pingu.png" alt="">
 
-    <input type="button" id="lanzar" value="Lanzar">
-    <input type="button" id="introducir" value="Introducir monedas">
-    <section>
-        <label for="">Apuesta</label>
-        <input type="number" onKeyDown="return false"  max="100" min="0" id="apuesta">
+    <input type="image" src="img/palancaUP.png" class='palanca' id="lanzar" value="Lanzar"> 
+    <input readonly type="text" id="cantidad" class="cantidad">
+</div>
+<div class="panel-money">
 
-        <label for="">Cantidad</label>
-        <input readonly type="text" id="cantidad">
-    </section>
+        <label for="">MONEDAS</label>
+        <input type="number" onKeyDown="return false"  max="100" min="0" id="apuesta" class="apuesta">
+        <input type="button" id="introducir" value="Introducir monedas" class="buttonIntroducir">
+</div>
     <div class="tabla-historial">       
      <table class="resultadoJuego" id="resultadoJuego" hidden>
         <thead>
@@ -35,6 +34,9 @@
     </table> 
     </div>
     <button type="text" id="terminar">Terminar partida</button>
+    <div class="cont-finalizar" id="cont-finalizar" hidden>
+        <h1>Partida finalizada!</h1>
+    </div>
     
 <script src="JS/tragraperras.js"></script>
 </body>
