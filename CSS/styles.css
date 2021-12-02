@@ -1,74 +1,116 @@
 
 body{
 position: relative;
+
 }
 .machine{
-    transform: translateX(80%);
-    width: 38%;
-    height: 98%;
-    background: url(../img/slot-machine.png);
-    background-size: cover;
+    margin-top: 40px;
+    transform: translateX(110%);
+    width: 30%;
+    height: 80%;
+    /* background: url(../img/slot-machine.png); */
+    background-size: contain;
+    background-repeat: no-repeat;
     position: relative;
+    background: url(../img/fondo.webp);
+    background-size: cover;
+    border-radius: 10px 10px 0 0;
+    border: 8px solid rgb(31, 29, 29);
+    /* border: solid 10px rgba(251,172,0,1); */
+    
+}
+.pata{
+    width: 110%;
+    height: 70px;
+    background: rgb(23,23,23);
+    background: linear-gradient(6deg, rgba(23,23,23,1) 0%, rgb(59, 51, 51) 43%, rgb(83, 76, 76) 81%, rgb(36, 22, 22)100%);
+    position: absolute;
+    bottom: 1;
+    left: 50%;
+    transform:translateX(-50%) translateY(100%);
+    border-radius: 20px 20px 0 0;
+    border: 2px solid rgb(51, 50, 50);
+
+}
+.parteSuperior{
+width: 120%;
+height: 100px;
+/* background: url(../img/monedasFondo.jpg);
+background-position: center;
+background-size: cover; */
+background: rgb(23,23,23);
+background: linear-gradient(13deg, rgba(23,23,23,1) 0%, rgb(153, 132, 56) 32%, rgb(187, 158, 43) 73%, rgb(77, 63, 33) 100%);
+border-radius: 50% 50% 0 0;
+position: absolute;
+top: 0;
+left: 50%;
+transform: translateX(-50%) translateY(-35px);
+border: 4px solid rgb(105, 73, 3);
+}
+.cantidad{
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 70px;
+    width: 180px;
+    font-size: 50px;
+    border-radius: 3px;
+    border: 2px solid black;
+    background-color: #FFE53B;  background-image: radial-gradient( circle 976px at 51.2% 51%,  
+    rgba(11,27,103,1) 0%, rgba(16,66,157,1) 0%, rgba(11,27,103,1) 17.3%, rgba(11,27,103,1) 58.8%,
+     rgba(11,27,103,1) 71.4%, rgba(16,66,157,1) 100.2%, rgba(187,187,187,1) 100.2% );
+    color: rgb(253, 196, 39);
+
+}
+.ventanaImg{
+background: rgb(98,45,0);
+background: linear-gradient(0deg, rgba(98,45,0,1) 0%, rgba(251,172,0,1) 100%);
+border: 20px solid;
+border-radius: 40px;
+width: 75%;
+height: 20%;
+position: absolute;
+bottom: 50%;
+right: 50%;
+transform: translateX(50%);
+display: flex;
+align-items: center;
+justify-content: center;
 }
 .imagenes_slots{
     background: rgb(255,255,255);
     background: linear-gradient(0deg, rgb(204, 201, 201) 0%, rgb(255, 253, 253) 60%, rgb(187, 186, 186) 100%);
-}
-.img1{
-    position: absolute;
-    width: 15%;
-    bottom: 54%;
-    left: 23.3%;
-    padding: 5px;
-    border-bottom: 7px solid black;
-    border-top: 7px solid black;
-    border-right: solid 8px rgb(172, 119, 39);
+    width: 20%;
+    padding: 10px;
+    margin: 5px;
+    border: solid 4px;
 }
 
-.img2{
-    position: absolute;
-    width: 15%;
-    bottom:  54%;
-    left: 41.4%;
-    padding: 5px;
-    border-bottom: 7px solid black;
-    border-top: 7px solid black;
-    border-left: solid 8px rgb(172, 119, 39);
-    border-right: solid 8px rgb(172, 119, 39);
-}
-.img3{
-    position: absolute;
-    width: 15%;
-    bottom:  54%;
-    left: 60.9%;
-    padding: 5px;
-    border-bottom: 7px solid black; 
-    border-top: 7px solid black;
-    border-left: solid 8px rgb(172, 119, 39);
-}
+
 .palanca{
     width: 200px;
     position: absolute;
-    right: -34.5%;
-    bottom: 320px;
-    transform: rotatez(-1deg);
+    bottom: 40%;
+    right: 0;
+    transform: translateX(100%)
 }
 
 /* Zona del panel */
 .panel-money{
-    border-radius: 3px;
-    width: 300px;
+    width: 303px;
     height: 200px;
     position: absolute;
     top: 0;
     left: 0;
-    background: rgb(113,87,87);
-    background: linear-gradient(0deg, rgba(113,87,87,1) 9%, rgba(255,0,23,1) 71%, rgba(228,152,10,1) 100%);
+    background-color: #FFE53B;  background-image: radial-gradient( circle 976px at 51.2% 51%,  rgba(11,27,103,1) 0%, rgba(16,66,157,1) 0%, rgba(11,27,103,1) 17.3%, rgba(11,27,103,1) 58.8%, rgba(11,27,103,1) 71.4%, rgba(16,66,157,1) 100.2%, rgba(187,187,187,1) 100.2% );
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     font-size: 30px;
+    margin-left: 40px;
+    color: white;
 }
 .apuesta{
     width: 100px;
@@ -81,8 +123,134 @@ position: relative;
     padding: 10px;
     border-radius: 30px;
     background-color: rgb(37, 37, 37);
+    cursor: pointer;
 }
 .tabla-historial{
     position: absolute;
-    bottom: 30%;
+    top: 32%;
+    height: 450px;
+    background-color: #FFE53B;  background-image: radial-gradient( circle 976px at 51.2% 51%,  
+    rgba(11,27,103,1) 0%, rgba(16,66,157,1) 0%, rgba(11,27,103,1) 17.3%, rgba(11,27,103,1) 58.8%,
+     rgba(11,27,103,1) 71.4%, rgba(16,66,157,1) 100.2%, rgba(187,187,187,1) 100.2% );
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    overflow: scroll;
+    text-align: center;
+    color: rgb(255, 255, 255);
 }
+tbody{
+    font-size: 19px;
+    color: rgb(255, 251, 251);
+    
+}
+
+.terminar{
+    width: 200px;
+    position: absolute;
+    bottom: 200px;
+    left: 85%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    height: 80px;
+    border: solid 4px black;
+    background: rgb(226,6,6);
+background: linear-gradient(0deg, rgba(226,6,6,1) 0%, rgb(82, 7, 7) 100%);
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+.simboloDolar{
+    position: absolute;
+    width: 80px;
+    top: 5px;
+    left: 53%;
+    color: white;
+
+}
+.containerBotonFinish{
+    width: auto;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    display: flex;
+    font-size: 10px;
+    transform: translateX(-50%);
+   
+}
+
+/*ESTILOS DEL BOTON FINISH */
+.push_button {
+    position: relative;
+    width:200px;
+    height:40px;
+    text-align:center;
+    color:#FFF;
+    text-decoration:none;
+    line-height:43px;
+    font-family:'Oswald', Helvetica;
+    display: block;
+    margin: 30px;
+    font-size: 20px; 
+    cursor: pointer;
+
+    }
+    .push_button:before {
+    background:#080808;
+    background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#493b3b), to(#221919));
+    
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    
+    -webkit-box-shadow:0 1px 2px rgba(0, 0, 0, .5) inset, 0 1px 0 rgb(10, 10, 10); 
+    -moz-box-shadow:0 1px 2px rgba(0, 0, 0, .5) inset, 0 1px 0 rgb(7, 7, 7); 
+    box-shadow:0 1px 2px rgba(0, 0, 0, .5) inset, 0 1px 0 rgb(7, 6, 6);
+    
+    position: absolute;
+    content: "";
+    left: -6px; right: -6px;
+    top: -6px; bottom: -10px;
+    z-index: -1;
+    }
+    
+    .push_button:active {
+        -webkit-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset;
+        top:5px;
+    }
+    .push_button:active:before{
+    top: -11px;
+    bottom: -5px;
+    content: "";
+    }
+    
+    .red {
+    text-shadow:-1px -1px 0 #A84155;
+    background: #f00606;
+    border:1px solid #ce0101;
+    
+    background-image:-webkit-linear-gradient(top, #fa001d, #da314f);
+    background-image:-moz-linear-gradient(top, #f70421, #b4253f);
+    background-image:-ms-linear-gradient(top, #f1021e, #bb2440);
+    background-image:-o-linear-gradient(top, #e6031e, #b82640);
+    background-image:linear-gradient(to bottom, #e4021c, #a3223a);
+    
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    
+    -webkit-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #AD4257, 0 4px 2px rgba(0, 0, 0, .5);
+    -moz-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #AD4257, 0 4px 2px rgba(0, 0, 0, .5);
+    box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #AD4257, 0 4px 2px rgba(0, 0, 0, .5);
+    }
+    
+    .red:hover {
+    background: #F66C7B;
+    background-image:-webkit-linear-gradient(top, #D25068, #F66C7B);
+    background-image:-moz-linear-gradient(top, #D25068, #F66C7B);
+    background-image:-ms-linear-gradient(top, #D25068, #F66C7B);
+    background-image:-o-linear-gradient(top, #D25068, #F66C7B);
+    background-image:linear-gradient(top, #D25068, #F66C7B);
+    }

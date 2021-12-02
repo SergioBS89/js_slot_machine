@@ -29,22 +29,30 @@ function juegoIniciado(){
         // Imprimimos el inicio de juego
         insertarColumna.innerHTML += `
         <tr>
-              <td></td>
+              <td>-You have inserted coins</td>
         </tr>
         `;
         iniciado=false
         noInsertarMasMonedas=false;
     }
     else{
-      alert('No hay dinero que insertar')
+      alert('No money to insert!!')
     }
 }
 
 document.getElementById('introducir').addEventListener('click',juegoIniciado,)
 
 function terminar(){
+  var dineroDisponible=document.getElementById('cantidad').value
+  if(dineroDisponible==0){
   tabla.hidden=true
   insertarColumna.innerHTML = '';
+  }else{
+  insertarColumna.innerHTML += `
+  <tr>
+        <td>-You have removed all the coins</td>
+  </tr>
+  `;    }
   
 }
 function eliminarDisabled(){
@@ -74,12 +82,7 @@ function subirPalanca(){
     reiniciarCantidad() //reinicio el valor de la cantidad a 0
   }
   iniciado = true
-  document.getElementById('cont-finalizar').innerHTML +=`Has conseguido un total de ${premioFinal} monedas`
 })
-
-// Cuando el usuario quiere lanzar la palanca sube 
-
-
 
 function girar (){
 
@@ -94,8 +97,7 @@ function girar (){
 
     document.getElementById('cantidad').value = saldo - 1;
     bajarPalanca()
-    palancaArriba=false
-    
+    palancaArriba=false  
 
   
 
@@ -136,7 +138,7 @@ const dolar =arrayImgRepetidas['dollar'] || 0;
         premio = 10
         insertarColumna.innerHTML += `
         <tr>
-              <td>TRES DOLARES! Ganas 10 monedas.</td>
+              <td>-THREE DOLLARS! You win 10 coins.</td>
         </tr>
         `;        
         document.getElementById('cantidad').value=saldo + premio
@@ -145,7 +147,7 @@ const dolar =arrayImgRepetidas['dollar'] || 0;
         premio=5
         insertarColumna.innerHTML += `
         <tr>
-              <td>TRES ALIMENTOS! Ganas 5 monedas.</td>
+              <td>-THREE VEGETABLES! You win 5 coins.</td>
         </tr>
         `;   
         document.getElementById('cantidad').value=saldo + premio
@@ -154,7 +156,7 @@ const dolar =arrayImgRepetidas['dollar'] || 0;
         premio=4
         insertarColumna.innerHTML += `
         <tr>
-              <td>DOS DOLARES! Ganas 4 monedas.</td>
+              <td>-TWO DOLLARS! You win 4 coins.</td>
         </tr>
         `;   
         document.getElementById('cantidad').value=saldo + premio
@@ -163,7 +165,7 @@ const dolar =arrayImgRepetidas['dollar'] || 0;
         premio=3
         insertarColumna.innerHTML += `
         <tr>
-              <td>DOS ALIMENTOS & UN DOLAR! Ganas 3 monedas.</td>
+              <td>-TWO VEGETABLES & ONE DOLLAR! You win 3 coins.</td>
         </tr>
         `;   
         document.getElementById('cantidad').value=saldo + premio
@@ -172,7 +174,7 @@ const dolar =arrayImgRepetidas['dollar'] || 0;
         premio=2
         insertarColumna.innerHTML += `
         <tr>
-              <td>DOS ALIMENTOS! Ganas 2 monedas.</td>
+              <td>-TWO VEGETABLES! You win 2 coins.</td>
         </tr>
         `;   
         document.getElementById('cantidad').value=saldo + premio
@@ -181,7 +183,7 @@ const dolar =arrayImgRepetidas['dollar'] || 0;
         console.log('un dolar')
         insertarColumna.innerHTML += `
         <tr>
-              <td>UN DOLAR! Ganas 1 moneda.</td>
+              <td>-ONE DOLLAR! You win 1 coin.</td>
         </tr>
         `;       
         document.getElementById('cantidad').value=saldo + premio
@@ -189,7 +191,7 @@ const dolar =arrayImgRepetidas['dollar'] || 0;
           // Agregamos al historial el gasto de una moneda
     insertarColumna.innerHTML += `
     <tr>
-          <td>Has gastado una moneda.</td>
+          <td>-You have spent a coin</td>
     </tr>
     `;
       }}else{
@@ -198,7 +200,7 @@ const dolar =arrayImgRepetidas['dollar'] || 0;
       }
 
 }else{
-    alert('inserta mas dinero')
+    alert('Insert coins to play!')
 }
 }
 
