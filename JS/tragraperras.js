@@ -79,13 +79,13 @@ function reiniciarCantidad(){
 //Funcion que baja la palanca de la maquina
 
 function bajarPalanca(){
-  document.getElementById('lanzar').src='../img/palancaDOWN.png'
+  document.getElementById('lanzar').src='img/palancaDOWN.png'
 }
 
 //Funcion que sube la palanca 
 
 function subirPalanca(){  
-  document.getElementById('lanzar').src='../img/palancaUP.png'
+  document.getElementById('lanzar').src='img/palancaUP.png'
 }
 
 // Si el usuario desea terminar la partida
@@ -122,9 +122,9 @@ if(saldo>=lanzamiento){
     var n2 = Math.floor(Math.random() * 10);
     var n3 = Math.floor(Math.random() * 10);
    //De esta forma mando imprimir el array de imagenes con la posicion de las variables random
-   document.getElementById('img_1').src = `../img/${listaImagenes[n1]}.png`
-   document.getElementById('img_2').src = `../img/${listaImagenes[n2]}.png`
-   document.getElementById('img_3').src = `../img/${listaImagenes[n3]}.png`
+   document.getElementById('img_1').src = `img/${listaImagenes[n1]}.png`
+   document.getElementById('img_2').src = `img/${listaImagenes[n2]}.png`
+   document.getElementById('img_3').src = `img/${listaImagenes[n3]}.png`
 
     // Comprobacion de duplicados o triplicados de las imagenes
 
