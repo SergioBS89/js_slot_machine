@@ -1,42 +1,43 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/styles.css">
-    <title>Pac desarrollo UF3</title>
-</head>
-<body>
-    <div class="machine">
-        <div class="pata"></div>
-        <div class="parteSuperior">
-            <input readonly type="text" id="cantidad" class="cantidad">
-            <img class="simboloDolar" src="img/simbolo.png" alt="">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="CSS/styles.css">
+        <title>Pac desarrollo UF3</title>
+    </head>
+    <body>
+        <!-- MAQUINA TRAGAPERRAS -->
+        <div class="machine">
+            <div class="pata"></div>
+            <div class="parteSuperior">
+                <input readonly type="text" id="cantidad" class="cantidad">
+                <img class="simboloDolar" src="img/simbolo.png" alt="">
+            </div>
+            <div class="ventanaImg">
+                <img class="imagenes_slots img1" id="img_1" src="img/pingu.png" alt="">
+                <img class="imagenes_slots img2" id="img_2" src="img/pingu.png" alt="">
+                <img class="imagenes_slots img3" id="img_3" src="img/pingu.png" alt="">           
+            </div>
+            <input type="image" src="img/palancaUP.png" class='palanca' id="lanzar" value="Lanzar"> 
+            <div class="containerBotonFinish">
+                <button class="push_button red " id="terminar" type="submit">END GAME!</button>  
+            </div>
         </div>
-        <div class="ventanaImg">
-        <img class="imagenes_slots img1" id="img_1" src="img/pingu.png" alt="">
-        <img class="imagenes_slots img2" id="img_2" src="img/pingu.png" alt="">
-        <img class="imagenes_slots img3" id="img_3" src="img/pingu.png" alt="">
-       
-    </div>
-    <input type="image" src="img/palancaUP.png" class='palanca' id="lanzar" value="Lanzar"> 
-    <div class="containerBotonFinish">
-    <button class="push_button red " id="terminar" type="submit">END GAME!</button>  
-</div>
-</div>
-<div class="panel-money">
-
-        <label for="">CASH</label>
-        <input type="number" onKeyDown="return false"  max="100" min="0" id="apuesta" class="apuesta">
-        <input type="button" id="introducir" value="Insert Coins" class="buttonIntroducir">
-</div>
-    <div class="tabla-historial">     
-        <h1>GAME HISTORY</h1>  
-     <table class="resultadoJuego" id="resultadoJuego" hidden>  
-        <tbody id="tbody"> 
-        <!-- Generado dinamicamente con JS -->
-        </tbody>
-    </table> 
-<script src="JS/tragraperras.js"></script>
-</body>
+    <!-- PANEL DEL DINERO PARA INSERTAR -->
+        <div class="panel-money">    
+            <label for="">CASH</label>
+            <input type="number" onKeyDown="return false"  max="100" min="0" id="apuesta" class="apuesta">
+            <input type="button" id="introducir" value="Insert Coins" class="buttonIntroducir">
+        </div>
+        <!-- TABLA DEL HISTORIAL DE JUEGO -->
+        <div class="tabla-historial">     
+            <h1>GAME HISTORY</h1>  
+            <table class="resultadoJuego" id="resultadoJuego" hidden>  
+                <tbody id="tbody"> 
+                <!-- Generado dinamicamente con JS -->
+                </tbody>
+            </table> 
+    <script src="JS/tragraperras.js"></script>
+    </body>
 </html>
